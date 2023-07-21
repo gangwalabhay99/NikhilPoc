@@ -1,1 +1,60 @@
-dd
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Copy TCLX Files
+
+on:
+ 
+ workflow_dispatch:
+  inputs:
+   environment:
+    type: environment
+    description: Environment selected
+    required: true
+
+
+  
+   
+ 
+
+   
+
+       
+        
+         
+         
+             
+
+jobs:
+  build:
+
+    runs-on: [MNS158]
+    steps:
+   
+      
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+        
+      - name: Copy Files
+        shell: powershell
+        run: |
+           Copy-Item -Path "C:\actions-runner\_work\mns_robot_framework\mns_robot_framework\input" -Destination "C:\Users\tesladev01\Documents\mns_tclx" -Recurse -Force
+
+  # buildtwo:
+
+    # runs-on: [MNS48]
+    # steps:
+   
+      
+    #   - name: Checkout
+    #     uses: actions/checkout@v3.5.3
+        
+    #   - name: Copy files
+    #     shell: powershell
+    #     run: |
+  
+    #        Copy-Item -Path "C:\actions-runner\_work\mns_robot_framework\mns_robot_framework\tclx" -Destination "D:\GithubActions" -Recurse -Force
+  
+
+         
+   
