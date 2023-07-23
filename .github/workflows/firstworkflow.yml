@@ -14,10 +14,16 @@ on:
    choicetwo:
     type: boolean
     description: Deploy to prod
+    
  
  
 jobs:
    testing:
+   
+    environment: ${{ github.event.inputs.environment }}
+    
+    
+      
     runs-on: ubuntu-latest
     
     steps:
@@ -28,8 +34,12 @@ jobs:
         
         
       - name: Test
+        env: 
+         Mysecret: ${{ secrets.AZURE_CREDS }}
+        
+        
+
         shell: bash
         run: |
-           echo ${{ github.event.inputs.environment }}
-  
-   
+           echo "The value of my secret is ${{ Mysecret }}"
+
