@@ -11,6 +11,10 @@ on:
     type: environment
     description: Environment selected
     required: true
+   choice:
+    type: boolean
+    description: Deploy to devops
+   
 
 
   
