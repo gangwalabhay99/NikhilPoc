@@ -1,7 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Copy TCLX Files
+name: Learn GHA
 
 on:
  
@@ -17,51 +14,22 @@ on:
    choicetwo:
     type: boolean
     description: Deploy to prod
-   
-
-
-  
-   
  
-
-   
-
-       
-        
-         
-         
-             
-
+ 
 jobs:
-  build:
-
-    runs-on: [MNS158]
+   testing:
+    runs-on: ubuntu-latest
+    
     steps:
    
       
-      - name: Checkout
-        uses: actions/checkout@v3.5.3
+      #- name: Checkout
+       # uses: actions/checkout@v3.5.3
         
-      - name: Copy Files
-        shell: powershell
+        
+      - name: Test
+        shell: bash
         run: |
-           Copy-Item -Path "C:\actions-runner\_work\mns_robot_framework\mns_robot_framework\input" -Destination "C:\Users\tesladev01\Documents\mns_tclx" -Recurse -Force
-
-  # buildtwo:
-
-    # runs-on: [MNS48]
-    # steps:
-   
-      
-    #   - name: Checkout
-    #     uses: actions/checkout@v3.5.3
-        
-    #   - name: Copy files
-    #     shell: powershell
-    #     run: |
+           echo ${{ github.workspace }}
   
-    #        Copy-Item -Path "C:\actions-runner\_work\mns_robot_framework\mns_robot_framework\tclx" -Destination "D:\GithubActions" -Recurse -Force
-  
-
-         
    
