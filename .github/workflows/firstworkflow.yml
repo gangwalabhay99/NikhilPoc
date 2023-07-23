@@ -41,5 +41,5 @@ jobs:
 
         shell: bash
         run: |
-           echo "The value of my secret is $Mysecret"
+           echo GITHUB_ENV
 
