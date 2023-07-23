@@ -14,6 +14,9 @@ on:
    choice:
     type: boolean
     description: Deploy to devops
+   choicetwo:
+    type: boolean
+    description: Deploy to prod
    
 
 
