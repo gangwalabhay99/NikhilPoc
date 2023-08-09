@@ -1,10 +1,8 @@
-|Test Environment |Language| JUnit<br/>XML | NUnit<br/>XML | XUnit<br/>XML | TRX<br/>file | JSON<br/>file |
-|-----------------|:------:|:---------:|:---------:|:---------:|:---:|:---:|
-|[Dart](https://github.com/dart-lang/test/blob/master/pkgs/test/doc/json_reporter.md)|Dart, Flutter| | | | | :heavy_check_mark: |
-|[Jest](https://jestjs.io/docs/configuration#default-reporter)|JavaScript|:heavy_check_mark:| | | | |
-|[Maven](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit.html)|Java, Scala, Kotlin|:heavy_check_mark:| | | | |
-|[Mocha](https://mochajs.org/#xunit)|JavaScript|:heavy_check_mark:| |[not xunit](https://github.com/mochajs/mocha/issues/4758)| | :heavy_check_mark: |
-|[MStest / dotnet](https://github.com/Microsoft/vstest-docs/blob/main/docs/report.md#syntax-of-default-loggers)|.Net|[:heavy_check_mark:](https://github.com/spekt/junit.testlogger#usage)|[:heavy_check_mark:](https://github.com/spekt/nunit.testlogger#usage)|[:heavy_check_mark:](https://github.com/spekt/xunit.testlogger#usage)|[:heavy_check_mark:](https://github.com/Microsoft/vstest-docs/blob/main/docs/report.md#syntax-of-default-loggers)| |
-|[pytest](https://docs.pytest.org/en/latest/how-to/output.html#creating-junitxml-format-files)|Python|:heavy_check_mark:| | | | |
-|[sbt](https://www.scala-sbt.org/release/docs/Testing.html#Test+Reports)|Scala|:heavy_check_mark:| | | | |
-|Your favorite<br/>environment|Your favorite<br/>language|probably<br/>:heavy_check_mark:| | | | |
+ ```markdown
+ | Test Case Description | Status |
+ | ----------------------- | ------ |
+ | Azure Storage Account - api_version: 2023-01-01 latest: abhay-test Microsoft.Storage/storageAccounts steusdevkjb is expected to exist | passed |
+ | Azure Storage Account - api_version: 2023-01-01 latest: abhay-test Microsoft.Storage/storageAccounts steusdevkjb location is expected to eq "eastus" | passed |
+ | Azure Generic Resource - api_version: 2023-01-31 latest: abhay-test mi-test-01 is expected to exist | passed |
+ | Azure Generic Resource - api_version: 2023-01-31 latest: abhay-test mi-test-01 location is expected to eq "eastus2" | passed |
+ ```
