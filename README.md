@@ -1,7 +1,6 @@
-# githubactionpoc
-This repository stores workflows used for POC.
- 
+ ```markdown
  | Test Case Description | Status |
+ 
  
  | Azure Storage Account - api_version: 2023-01-01 latest: abhay-test Microsoft.Storage/storageAccounts steusdevkjb is expected to exist | passed |
  
@@ -11,4 +10,4 @@ This repository stores workflows used for POC.
  
  | Azure Generic Resource - api_version: 2023-01-31 latest: abhay-test mi-test-01 location is expected to eq "eastus2" | passed |
  
- 
+ ```
