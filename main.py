@@ -1,4 +1,5 @@
 import json
+import os
 from jinja2 import Template
 
 with open("test.json") as jsondata:
@@ -18,6 +19,6 @@ with open("template.md", "r") as f:
 
  print(markdown)
 
-with open("GITHUB_STEP_SUMMARY", "w") as f:
+with open(os.environ["GITHUB_STEP_SUMMARY"], "w") as f:
   f.write(markdown)
 
