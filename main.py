@@ -18,6 +18,6 @@ with open("template.md", "r") as f:
 
  print(markdown)
 
- #with open("table.md", "w") as f:
-  #f.write(markdown)
+with open("GITHUB_STEP_SUMMARY", "w") as f:
+  f.write(markdown)
 
