@@ -41,5 +41,6 @@ jobs:
 
         shell: bash
         run: |
+           pip install -r requirements.txt
            echo python main.py > $GITHUB_STEP_SUMMARY
 
