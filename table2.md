@@ -7,3 +7,4 @@
 
 
  
+[![Learn GHA](https://github.com/nikhil-insight/githubactionpoc/actions/workflows/firstworkflow.yml/badge.svg)](https://github.com/nikhil-insight/githubactionpoc/actions/workflows/firstworkflow.yml)
