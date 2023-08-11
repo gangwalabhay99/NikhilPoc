@@ -61,4 +61,4 @@ jobs:
 
         
         run: |
-           echo "## Welcome to Your Job"
+           cat ## Welcome to Your Job
