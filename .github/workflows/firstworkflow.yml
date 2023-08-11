@@ -61,4 +61,4 @@ jobs:
 
         
         run: |
-           cat ## Welcome to Your Job
+           cat table2.md
