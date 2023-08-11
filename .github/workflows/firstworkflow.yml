@@ -58,18 +58,28 @@ jobs:
         uses: actions/checkout@v3.5.3
         
       - name: Post Comment with Custom Content
-        uses: actions/github-script@v4
-        with:
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `Here's the custom content:\n\n${require('fs').readFileSync('table2.md', 'utf-8')}`
-            });
-
-
-
+        shell: pwsh
+        run: |
+              $url = "https://api.github.com/repos/$repoFullName/check-runs"
+              $hdr = @{
+                  Accept = 'application/vnd.github.antiope-preview+json'
+                  Authorization = "token $ghToken"
+              }
+              $bdy = @{
+                  name       = $report_name
+                  head_sha   = $ref
+                  status     = 'completed'
+                  conclusion = $conclusion
+                  output     = @{
+                      title   = $report_title
+                      summary = "This run completed at ``$([datetime]::Now)``"
+                      text    = $reportData
+                  }
+              }
+              Invoke-WebRequest -Headers $hdr $url -Method Post -Body ($bdy | ConvertTo-Json)
+              
+              
+              
 
 
 
