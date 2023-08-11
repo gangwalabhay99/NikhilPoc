@@ -57,10 +57,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.3
         
-      - name: Test
-        
-      
+      - name: Post Comment with Custom Content
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Here's the custom content:\n\n${require('fs').readFileSync('table2.md', 'utf-8')}`
+            });
 
-        
-        run: |
-           cat table2.md
+
+
+
+
+
