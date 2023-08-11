@@ -56,11 +56,9 @@ jobs:
     steps:
    
       - name: Test
-        env: 
-         Mysecret: ${{ secrets.AZURE_CREDS }}
         
       
 
-        shell: bash
+        
         run: |
-           echo >> $GITHUB_STEP_SUMMARY
+           echo "## Welcome to Your Job"
