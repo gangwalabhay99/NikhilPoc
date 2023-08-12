@@ -12,12 +12,14 @@ on:
 jobs:
    testing:
    
+   
+   
     environment: ${{ github.event.inputs.environment }}
     
     
       
     runs-on: ubuntu-latest
-    
+    permissions: write-all
     steps:
    
       
