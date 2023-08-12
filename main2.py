@@ -79,7 +79,7 @@ payload = {
     "status": "completed",
     "conclusion": "success",
     "output": {
-        "title": "Detailed Results",
+        "title": "Detailed Results 2",
         "summary": markdown
         
     }
