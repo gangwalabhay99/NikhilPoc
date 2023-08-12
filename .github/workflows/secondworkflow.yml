@@ -15,8 +15,11 @@ jobs:
     
 
     steps:
-    -uses: actions/github-script@v6
-     with:
-        result-encoding: string
-        script: return "I will be string (not JSON) encoded!"
     
+     - name: Test Report
+       uses: dorny/test-reporter@v1
+       if: success() || failure()    # run this step even if previous step failed
+       with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: inspectestresults.xml    # Path to test results
+          reporter: jest-Junit       # Format of test results
