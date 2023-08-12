@@ -21,5 +21,5 @@ jobs:
        if: success() || failure()    # run this step even if previous step failed
        with:
           name: JEST Tests            # Name of the check run which will be created
-          path: inspectestresults.xml    # Path to test results
+          path: githubactionpoc/inspectestresults.xml    # Path to test results
           reporter: jest-Junit       # Format of test results
