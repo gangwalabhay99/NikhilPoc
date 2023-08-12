@@ -50,38 +50,9 @@ jobs:
         run: |
            pip install -r requirements.txt
            python main.py
-   testing2:
-   
-    environment: ${{ github.event.inputs.environment }}
-    
-    
+ 
       
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3.5.3
-        
-      - name: Post Comment with Custom Content
-        shell: pwsh
-        run: |
-              $url = "https://api.github.com/repos/githubactionpoc/check-runs"
-              $hdr = @{
-                  Accept = 'application/vnd.github.antiope-preview+json'
-                  Authorization = "token $ghToken"
-              }
-              $bdy = @{
-                  name       = $report_name
-                  head_sha   = $ref
-                  status     = 'completed'
-                  conclusion = $conclusion
-                  output     = @{
-                      title   = $report_title
-                      summary = "This run completed at ``$([datetime]::Now)``"
-                      text    = $reportData
-                  }
-              }
-              Invoke-WebRequest -Headers $hdr $url -Method Post -Body ($bdy | ConvertTo-Json)
+   
               
               
               
