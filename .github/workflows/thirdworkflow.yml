@@ -23,6 +23,14 @@ jobs:
               -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               -H "X-GitHub-Api-Version: 2022-11-28" \
               https://api.github.com/repos/nikhil-insight/githubactionpoc/check-runs \
-              -d '{"name":"mighty_readme","head_sha": "${{ github.sha }}","output":{"title":"Mighty Readme report","summary":"hi","text":"hi"}}'
+              -d '{
+              "name": "Custom Check",
+              "head_sha": "${{ github.sha }}",
+              "status": "completed",
+              "conclusion": "success",
+              "output": {
+                "title": "Custom Check Results",
+                "summary": "This is a custom check with annotations"
+              }'
                       
         
