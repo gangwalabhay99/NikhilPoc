@@ -1,7 +1,7 @@
 name: Custom Output Example
 
 
-on:
+on: 
   push:
     branches:
       - main
