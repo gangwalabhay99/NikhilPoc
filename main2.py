@@ -74,7 +74,7 @@ headers = {
 
 # Set the payload for creating the check run
 payload = {
-    "name": "Detailed Result",
+    "name": "Detailed Result 2",
     "head_sha": commit_sha,
     "status": "completed",
     "conclusion": "success",
