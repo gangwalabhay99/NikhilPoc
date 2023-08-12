@@ -1,25 +1,29 @@
 name: Custom Output Example
 
+
 on:
   push:
     branches:
       - main
 
 jobs:
+     
   generate_output:
+  
+  
     runs-on: ubuntu-latest
+    
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Generate Custom Output
-        id: generate_output
-        run: |
-          # You can use the 'echo' command to generate custom output
-          echo "::set-output name=message::Hello from the workflow!"
+        
+    
+     
 
       - name: Display Custom Output
-        run: |
-          # You can access the custom output using the 'steps.<step_id>.outputs' context
-          echo "Custom Output: ${{ steps.generate_output.outputs.message }}"
+        
+        uses: actions/github-script@v6
+        id: my-script
+        with:
+         result-encoding: string
+         script: return "I will be string (not JSON) encoded!"
+    
