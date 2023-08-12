@@ -20,7 +20,7 @@ jobs:
           response=$(curl -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/${{ github.repository }}/check-runs" \
+             https://api.github.com/repos/nikhil-insight/githubactionpoc/check-runs \
             -d '{
               "name": "Custom Check",
               "head_sha": "${{ github.sha }}",
@@ -41,7 +41,7 @@ jobs:
           curl -X PATCH \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/${{ github.repository }}/check-runs/$check_run_id" \
+            https://api.github.com/repos/nikhil-insight/githubactionpoc/check-runs \
             -d '{
               "status": "completed",
               "conclusion": "success",
