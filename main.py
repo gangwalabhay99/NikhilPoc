@@ -45,8 +45,8 @@ with open("template.md", "r") as f:
 
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
-owner = repository_full_name.split("/")[0]
-repo = repository_full_name.split("/")[1]
+owner = repository_full_name.split('/')[0]
+repo = repository_full_name.split('/')[1]
 
 repository_owner = owner
 repository_name = repo
@@ -62,7 +62,7 @@ check_run_url = f"https://api.github.com/repos/{repository_owner}/{repository_na
 
 # Set the headers for the API request
 headers = {
-    "Authorization": f'token {os.environ.get("GITHUB_TOKEN")}',
+    "Authorization": f"Bearer {github_token}",
     "Accept": "application/vnd.github.antiope-preview+json"
 }
 
