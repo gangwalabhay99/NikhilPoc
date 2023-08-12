@@ -2,18 +2,10 @@ name: Learn GHA
 
 on:
  
- workflow_dispatch:
-  inputs:
-   environment:
-    type: environment
-    description: Environment selected
-    required: true
-   choice:
-    type: boolean
-    description: Deploy to devops
-   choicetwo:
-    type: boolean
-    description: Deploy to prod
+ push:
+    branches:
+      - main
+
     
  
  
