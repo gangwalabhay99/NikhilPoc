@@ -52,7 +52,7 @@ repository_owner = owner
 repository_name = repo
 
 # Set your GitHub token as an environment variable or replace with your actual token
-#github_token = os.environ.get("GITHUB_TOKEN")
+github_token = os.environ.get("GITHUB_TOKEN")
 
 # Set the commit SHA for which you want to create the check run
 commit_sha = os.getenv("GITHUB_SHA")
