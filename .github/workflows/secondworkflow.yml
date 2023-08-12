@@ -15,15 +15,8 @@ jobs:
     
 
     steps:
-        
-    
-     
-
-      - name: Display Custom Output
-        
-        uses: actions/github-script@v6
-        id: my-script
-        with:
-         result-encoding: string
-         script: return "I will be string (not JSON) encoded!"
+    -uses: actions/github-script@v6
+     with:
+        result-encoding: string
+        script: return "I will be string (not JSON) encoded!"
     
