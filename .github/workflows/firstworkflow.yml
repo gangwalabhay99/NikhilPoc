@@ -24,7 +24,7 @@ jobs:
 
       - name: Test 2
         run: |
-          python $GITHUB_ACTION_PATH/../tst/main.py
+          python $GITHUB_ACTION_PATH/tst/main.py
 
               
               
