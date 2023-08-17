@@ -27,7 +27,17 @@ context = {
 }
 
 context['zip'] = builtins.zip
+
+
+
+# testing 
 print(os.getcwd())
+files = os.listdir()
+for file in files:
+  print(file)
+
+
+
 
 with open("template.md", "r") as f:
  template = Template(f.read())
