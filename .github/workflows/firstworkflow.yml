@@ -1,14 +1,6 @@
 name: Learn GHA
 
-on:
- #workflow_dispatch:
-  
- push:
-    branches:
-      - main 
-
-    
- 
+on: [push, workflow_dispatch]
  
 jobs:
    testing:
@@ -43,15 +35,11 @@ jobs:
         env: 
          Mysecret: ${{ secrets.AZURE_CREDS }}
         
-      
-
         shell: bash
         run: |
            pip install -r requirements.txt
            python main.py
 
-      
- 
    testing2:
    
    
