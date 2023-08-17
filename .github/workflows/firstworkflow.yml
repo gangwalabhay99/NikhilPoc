@@ -24,7 +24,7 @@ jobs:
 
       - name: Test 2
         run: |
-          python "tst/main.py"
+          python "tst/file.py"
 
               
               
