@@ -27,7 +27,6 @@ context = {
 }
 
 context['zip'] = builtins.zip
-print(os.getcwd())
 
 with open("template.md", "r") as f:
  template = Template(f.read())
