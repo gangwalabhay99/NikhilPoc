@@ -40,7 +40,7 @@
           {
             "id": "azure-storage-account",
             "title": "Check azure-storage-account",
-            "desc": null,
+            "desc": "null",
             "descriptions": [],
             "impact": 0.5,
             "refs": [],

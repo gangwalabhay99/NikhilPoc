@@ -1,8 +1,0 @@
-<?xml version='1.0'?>
-<testsuites>
-  <testsuite name='inspec' tests='2' failed='0' failures='0'>
-    <testcase name='Azure Storage Account - api_version: 2023-01-01 latest: abhay-test Microsoft.Storage/storageAccounts steusdevkjb is expected to exist' classname='inspec.azure-storage-account' target='azure://e2cb1307-7375-491d-b2e2-5a70a4b8abcf' time='0.0015378'/>
-    <testcase name='Azure Storage Account - api_version: 2023-01-01 latest: abhay-test Microsoft.Storage/storageAccounts steusdevkjb location is expected to eq &quot;eastus&quot;' classname='inspec.azure-storage-account' target='azure://e2cb1307-7375-491d-b2e2-5a70a4b8abcf' time='0.001212801'/>
-  </testsuite>
-  <testsuite name='inspec-azure' tests='0' failed='0' failures='0'/>
-</testsuites>

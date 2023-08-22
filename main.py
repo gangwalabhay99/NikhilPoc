@@ -34,17 +34,6 @@ with open("template.md", "r") as f:
 
  markdown = template.render(context)
 
-
- 
-
- #with open("table.md", "w") as f:
-  #f.write(markdown)
-
-#with open(os.environ["GITHUB_STEP_SUMMARY"], "w") as f:
-  #f.write(markdown)
-
-
-
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
 owner = repository_full_name.split('/')[0]
 repo = repository_full_name.split('/')[1]
@@ -88,7 +77,6 @@ payload = {
 
 # Send the API request to create the check run
 response = requests.post(check_run_url, json=payload, headers=headers)
-
 # Check if the API request was successful
 if response.status_code == 201:
     print("Check run created successfully!")
