@@ -32,23 +32,27 @@ for result in allresults:
     list_resource_type.append(result["code_desc"].split('-')[0])
     list_time_taken.append(result["run_time"])
 
-
- 
- #{%- for result in allresults & time in list_time_taken & type in list_resource_type %}
-
 context = {
  'list_time_taken':list_time_taken,
  'list_resource_type':list_resource_type,
  'allresults':allresults
 }
 
-context['zip'] = builtins.zip
-print(os.getcwd())
+summarised_context = {
+ 'controls_results': summarised_controls_results,
+ 'passed_count': passed_count,
+ 'failed_count' : failed_count,
+ 'total_count': total_count
+}
 
 with open("template.md", "r") as f:
  template = Template(f.read())
-
  markdown = template.render(context)
+
+with open("templateResults.md", "r") as j:
+ summarised_template = Template(j.read())
+ markdown = summarised_template.render(summarised_context)
+
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
 owner = repository_full_name.split('/')[0]
@@ -91,6 +95,17 @@ payload = {
     }
 }
 
+summarised_payload = {
+    "name": "summarised Result",
+    "head_sha": commit_sha,
+    "status": "completed",
+    "conclusion": "success",
+    "output": {
+        "title": "summarised Results",
+        "summary": markdown   
+    }
+}
+
 # Send the API request to create the check run
 response = requests.post(check_run_url, json=payload, headers=headers)
 # Check if the API request was successful
@@ -99,3 +114,13 @@ if response.status_code == 201:
 else:
     print(f"Failed to create check run. Status code: {response.status_code}")
     print("Response:", response.text)
+
+
+# Send the API request to create the check run
+summarised_response = requests.post(check_run_url, json=summarised_payload, headers=headers)
+# Check if the API request was successful
+if summarised_response.status_code == 201:
+    print("Check run created successfully!")
+else:
+    print(f"Failed to create check run. Status code: {summarised_response.status_code}")
+    print("Response:", summarised_response.text)
