@@ -26,6 +26,16 @@ print("Number of total cases occurrences:", total_count)
 with open("templateResults.md", "r") as f:
  template = Template(f.read())
 
+context = {
+ 'allresults':controls_results
+}
+
+context['zip'] = builtins.zip
+print(os.getcwd())
+
+with open("template.md", "r") as f:
+ template = Template(f.read())
+
  markdown = template.render(context)
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
@@ -58,14 +68,13 @@ headers = {
 
 # Set the payload for creating the check run
 payload = {
-    "name": "Detailed Result",
+    "name": "summarised Result",
     "head_sha": commit_sha,
     "status": "completed",
     "conclusion": "success",
     "output": {
-        "title": "Detailed Results",
-        "summary": markdown
-        
+        "title": "summarised Results",
+        "summary": markdown   
     }
 }
 
