@@ -18,8 +18,6 @@ passed_count = sum(1 for control in summarised_controls_results for result in co
 failed_count = sum(1 for control in summarised_controls_results for result in control.get("results", []) if result.get("status") == "failed")
 total_count = failed_count + passed_count 
 
-
-
 with open("templateResults.md", "r") as j:
  summarised_template = Template(j.read())
 
