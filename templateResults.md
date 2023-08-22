@@ -1,4 +1,4 @@
-# Control Results Summary
+# Results Summary
 
 | Status      | Count |
 |-------------|-------|
