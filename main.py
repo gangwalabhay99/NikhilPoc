@@ -4,10 +4,26 @@ import os
 import builtins
 import requests
 
-
-with open("test.json") as jsondata:
+with open("test.json", "r") as json_file:
+    json_data = json_file.read()
     allresults=json.load(jsondata)["profiles"][0]["controls"][0]['results']
-    
+
+# Parse the JSON data
+data = json.loads(json_data)
+
+# Extract the controls results
+summarised_controls_results = data.get("profiles", [])[0].get("controls", [])
+
+# Count the number of passed occurrences
+passed_count = sum(1 for control in summarised_controls_results for result in control.get("results", []) if result.get("status") == "passed")
+failed_count = sum(1 for control in summarised_controls_results for result in control.get("results", []) if result.get("status") == "failed")
+total_count = failed_count + passed_count 
+
+# # printing count 
+# print("Number of failed occurrences:", failed_count)
+# print("Number of passed occurrences:", passed_count)
+# print("Number of total cases occurrences:", total_count)
+
 list_resource_type = []
 list_time_taken =[]
 

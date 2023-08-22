@@ -12,31 +12,28 @@ with open("test.json", "r") as json_file:
 data = json.loads(json_data)
 
 # Extract the controls results
-controls_results = data.get("profiles", [])[0].get("controls", [])
+summarised_controls_results = data.get("profiles", [])[0].get("controls", [])
 
 # Count the number of passed occurrences
-passed_count = sum(1 for control in controls_results for result in control.get("results", []) if result.get("status") == "passed")
-failed_count = sum(1 for control in controls_results for result in control.get("results", []) if result.get("status") == "failed")
+passed_count = sum(1 for control in summarised_controls_results for result in control.get("results", []) if result.get("status") == "passed")
+failed_count = sum(1 for control in summarised_controls_results for result in control.get("results", []) if result.get("status") == "failed")
 total_count = failed_count + passed_count 
 
-# printing count 
-print("Number of failed occurrences:", failed_count)
-print("Number of passed occurrences:", passed_count)
-print("Number of total cases occurrences:", total_count)
 
-with open("templateResults.md", "r") as f:
- template = Template(f.read())
 
-context = {
- 'controls_results': controls_results,
+with open("templateResults.md", "r") as j:
+ summarised_template = Template(j.read())
+
+summarised_context = {
+ 'controls_results': summarised_controls_results,
  'passed_count': passed_count,
  'failed_count' : failed_count,
  'total_count': total_count
 }
 
-with open("templateResults.md", "r") as f:
- template = Template(f.read())
- markdown = template.render(context)
+with open("templateResults.md", "r") as j:
+ summarised_template = Template(j.read())
+ markdown = summarised_template.render(summarised_context)
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
 owner = repository_full_name.split('/')[0]
