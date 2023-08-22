@@ -19,7 +19,8 @@ failed_count = sum(1 for control in summarised_controls_results for result in co
 total_count = failed_count + passed_count 
 
 with open("templateResults.md", "r") as j:
- summarised_template = Template(j.read())
+    summarised_template = Template(j.read())
+    markdown = summarised_template.render(summarised_context)
 
 summarised_context = {
  'controls_results': summarised_controls_results,
@@ -27,10 +28,6 @@ summarised_context = {
  'failed_count' : failed_count,
  'total_count': total_count
 }
-
-with open("templateResults.md", "r") as j:
- summarised_template = Template(j.read())
- markdown = summarised_template.render(summarised_context)
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
 owner = repository_full_name.split('/')[0]
