@@ -28,7 +28,10 @@ with open("templateResults.md", "r") as f:
  template = Template(f.read())
 
 context = {
- 'allresults':controls_results
+ 'allresults': controls_results,
+ 'passed_count': passed_count,
+ 'failed_count' : failed_count,
+ 'total_count': total_count
 }
 
 context['zip'] = builtins.zip
