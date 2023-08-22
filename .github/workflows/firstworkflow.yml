@@ -20,10 +20,11 @@ jobs:
         shell: bash
         run: |
            pip install -r requirements.txt
+           python detailed.py
 
       - name: Test 2
         run: |
-          python try.py
+          python summarised.py
 
               
               
