@@ -20,7 +20,6 @@ jobs:
         shell: bash
         run: |
            pip install -r requirements.txt
-           python main.py
 
       - name: Test 2
         run: |
