@@ -2,7 +2,6 @@ import json
 from jinja2 import Template
 import os
 import requests
-import builtins
 
 
 with open("test.json", "r") as json_file:
