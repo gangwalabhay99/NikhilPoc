@@ -28,18 +28,14 @@ with open("templateResults.md", "r") as f:
  template = Template(f.read())
 
 context = {
- 'allresults': controls_results,
+ 'controls_results': controls_results,
  'passed_count': passed_count,
  'failed_count' : failed_count,
  'total_count': total_count
 }
 
-context['zip'] = builtins.zip
-print(os.getcwd())
-
 with open("templateResults.md", "r") as f:
  template = Template(f.read())
-
  markdown = template.render(context)
 
 repository_full_name = os.getenv("GITHUB_REPOSITORY")
