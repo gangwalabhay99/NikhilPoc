@@ -6,7 +6,7 @@ import requests
 
 with open("test.json", "r") as json_file:
     json_data = json_file.read()
-    allresults=json.load(jsondata)["profiles"][0]["controls"][0]['results']
+    allresults=json.load(json_file)["profiles"][0]["controls"][0]['results']
 
 # Parse the JSON data
 data = json.loads(json_data)
