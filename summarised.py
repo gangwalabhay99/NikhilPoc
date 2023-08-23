@@ -46,11 +46,6 @@ commit_sha = os.getenv("GITHUB_SHA")
 # Set the URL for creating a check run
 check_run_url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/check-runs"
 
-print(repository_owner)
-print(repository_name)
-print(github_token)
-print(commit_sha)
-print(markdown)
 
 # Set the headers for the API request
 headers = {
@@ -73,10 +68,10 @@ payload = {
 # Send the API request to create the check run
 response = requests.post(check_run_url, json=payload, headers=headers)
 # Check if the API request was successful
-if response.status_code == 201:
-    print("Check run created successfully!")
-else:
-    print(f"Failed to create check run. Status code: {response.status_code}")
-    print("Response:", response.text)
+# if response.status_code == 201:
+#     print("Check run created successfully!")
+# else:
+#     print(f"Failed to create check run. Status code: {response.status_code}")
+#     print("Response:", response.text)
 
 
