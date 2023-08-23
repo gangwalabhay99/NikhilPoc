@@ -24,7 +24,7 @@ jobs:
 
       - name: Test 2
         run: |
-          python summarised.py
+          python summarised.py > output.txt
 
       # - name: Adding markdown
       #   run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
@@ -37,15 +37,16 @@ jobs:
       #     echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
       #     echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
               
-        
+      # - uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.10' 
+      # - run: |
+      #     python summarised.py > output.txt
+            
       - name: Adding markdown
         run: |
           echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
           echo "$(<output.txt)" >> $GITHUB_STEP_SUMMARY
       
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10' 
-      - run: |
-          python summarised.py > output.txt
+      
       
