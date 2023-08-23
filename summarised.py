@@ -68,10 +68,10 @@ payload = {
 # Send the API request to create the check run
 response = requests.post(check_run_url, json=payload, headers=headers)
 # Check if the API request was successful
-# if response.status_code == 201:
-#     print("Check run created successfully!")
-# else:
-#     print(f"Failed to create check run. Status code: {response.status_code}")
-#     print("Response:", response.text)
+if response.status_code == 201:
+    print("Check run created successfully!")
+else:
+    print(f"Failed to create check run. Status code: {response.status_code}")
+    print("Response:", response.text)
 
 
