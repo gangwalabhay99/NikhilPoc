@@ -20,14 +20,14 @@ jobs:
         shell: bash
         run: |
            pip install -r requirements.txt
-           python detailed.py > output1.txt
+           python detailed.py > detailed.txt
 
       - name: Test 2
         run: |
-          python summarised.py > output.txt
+          python summarised.py > summarised.txt
         
       - name: Adding markdown
         run: |
-          echo "$(<output1.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "$(<summarised.txt)" >> $GITHUB_STEP_SUMMARY
       
       

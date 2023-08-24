@@ -3,8 +3,7 @@ from jinja2 import Template
 import os
 import requests
 
-
-with open("test.json", "r") as json_file:
+with open("test.json") as json_file:
     json_data = json_file.read()
 
 # Parse the JSON data
@@ -26,7 +25,7 @@ summarised_context = {
  'total_count': total_count
 }
 
-with open("templateResults.md", "r") as j:
+with open("pythonScript/summarised_template.md", "r") as j:
     summarised_template = Template(j.read())
     markdown = summarised_template.render(summarised_context)
 
@@ -46,6 +45,11 @@ commit_sha = os.getenv("GITHUB_SHA")
 # Set the URL for creating a check run
 check_run_url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/check-runs"
 
+print(repository_owner)
+print(repository_name)
+print(github_token)
+print(commit_sha)
+print(markdown)
 
 # Set the headers for the API request
 headers = {
