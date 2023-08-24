@@ -25,7 +25,7 @@ summarised_context = {
  'total_count': total_count
 }
 
-with open("pythonScript/summarised_template.md", "r") as j:
+with open("pythonScript/summarised.md", "r") as j:
     summarised_template = Template(j.read())
     markdown = summarised_template.render(summarised_context)
 

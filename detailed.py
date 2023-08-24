@@ -39,7 +39,7 @@ for file in files:
 
 
 
-with open("template.md", "r") as f:
+with open("detailed.md", "r") as f:
  template = Template(f.read())
 
  markdown = template.render(context)
