@@ -45,12 +45,6 @@ commit_sha = os.getenv("GITHUB_SHA")
 # Set the URL for creating a check run
 check_run_url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/check-runs"
 
-print(repository_owner)
-print(repository_name)
-print(github_token)
-print(commit_sha)
-print(markdown)
-
 # Set the headers for the API request
 headers = {
     "Authorization": f"Bearer {github_token}",
